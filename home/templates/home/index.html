@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<button onclick="start()">Hi</button>
+<button onclick="admin()">Admin</button>
+
+<hr>
+<ul>
+    {% for todo in todos %}
+        <li>
+            {{ todo.title }}
+            <input type="checkbox" name="" id="is-done" {% if todo.is_done %} checked {% endif %} readonly>
+        </li>
+    {% endfor %}
+
+</ul>
+
+<script>
+    function start() {
+        alert('Hello World');
+    }
+
+    function admin() {
+        window.location.pathname = '/admin'
+    }
+</script>
+</body>
+</html>
